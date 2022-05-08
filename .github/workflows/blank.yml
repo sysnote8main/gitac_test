@@ -17,13 +17,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
       - name: Clone a repo
         run: git clone https://github.com/kirigami-0/NNSB_main_system.git
       - name: Output test message
         run: echo This script still working!
       - name: Make a zip
-        run: zip release.zip ${GITHUB_WORKSPACE}/
+        run: zip -r release.zip ./ -x "*.git*"
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.0.0
         with:
