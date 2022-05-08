@@ -27,7 +27,7 @@ jobs:
         run: |
           cd ./NNSB_main_system
           rm ./zip_in.py
-          rm .vscode
+          rm -r .vscode
           rm *.git
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.0.0
