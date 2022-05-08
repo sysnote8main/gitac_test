@@ -25,8 +25,9 @@ jobs:
         run: echo This script still working!
       - name: Make a zip
         run: |
-          rm ./NNSB_main_system/zip_in.py
-          zip -r release.zip ./NNSB_main_system/* -x "*.git*"
+          cd ./NNSB_main_system
+          rm ./zip_in.py
+          zip -r release.zip ./* -x "*.git*"
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.0.0
         with:
