@@ -22,10 +22,10 @@ jobs:
       - name: Output test message
         run: echo This script still working!
       - name: Make a zip
-        run: zip {G}
+        run: zip release.zip {GITHUB_WORKSPACE} 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.0.0
         with:
-          name: A
-          path: ./
+          name: ArtifactDev
+          path: ./release.zip
           retention-days: 10
