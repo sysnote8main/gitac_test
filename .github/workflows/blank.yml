@@ -27,7 +27,7 @@ jobs:
         run: |
           cd ./NNSB_main_system
           rm ./zip_in.py
-          zip -r release.zip ./* -x "*.git*"
+          zip -r ../release.zip ./* -x "*.git*"
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.0.0
         with:
